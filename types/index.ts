@@ -1,0 +1,1 @@
+type Categories = "Electronics" | "Wearables" | "Home & Kitchen" | "Sports & Outdoors" | "Computers" | "Clothing";
