@@ -37,8 +37,15 @@ const ProfilePage = () => {
       </TouchableOpacity>
       <TouchableOpacity className="profile-lines">
         <View className="flex flex-row gap-4 items-center">
-          <MaterialIcons name="local-offer" size={24} color="black" />
+          <MaterialIcons name="local-offer" size={26} color="black" />
           <Text className="font-semibold text-xl">Your orders</Text>
+        </View>
+        <MaterialIcons name="keyboard-arrow-right" size={26} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity className="profile-lines">
+        <View className="flex flex-row gap-4 items-center">
+          <MaterialIcons name="reviews" size={26} color="black" />
+          <Text className="font-semibold text-xl">Your reviews</Text>
         </View>
         <MaterialIcons name="keyboard-arrow-right" size={26} color="black" />
       </TouchableOpacity>

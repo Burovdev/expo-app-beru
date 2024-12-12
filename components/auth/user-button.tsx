@@ -1,4 +1,4 @@
-import { Image, View, Text } from "react-native"
+import { Image, View, Text, TouchableOpacity } from "react-native"
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 interface UserButtonProps{
@@ -8,7 +8,7 @@ interface UserButtonProps{
 
 export const UserButton = ({name, img}: UserButtonProps) => {
     return (
-        <View className="flex flex-row items-center gap-4">
+        <TouchableOpacity className="flex flex-row items-center gap-4">
             {img ? (
                 <Image source={{ uri: img}} style={{ width: 40, height: 40 }} className="rounded-full"/>
             ) : (
@@ -17,6 +17,6 @@ export const UserButton = ({name, img}: UserButtonProps) => {
                 </View>
             )}
             <Text className="font-semibold text-3xl">{name}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
