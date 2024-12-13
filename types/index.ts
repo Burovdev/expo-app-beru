@@ -10,3 +10,11 @@ type ShoppingCard = {
     image: string,
     inStock: boolean
 }
+
+type CartItem = {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+    image: string;
+  }
