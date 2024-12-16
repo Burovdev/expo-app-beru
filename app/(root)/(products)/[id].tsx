@@ -10,12 +10,13 @@ import { useCartStore } from "@/lib/store/cartStore";
 const ProductPage = () => {
     const { id } = useGlobalSearchParams();
     const MemoizedShoppingCard = React.memo(ShoppingCard);
-    const { addToCart } = useCartStore();
+    const { cart, addToCart } = useCartStore();
   
     const product = products.find((product) => product.id === id);
     const relatedProducts = products.filter(
       (item) => item.category === product?.category && item.id !== product?.id
     );
+    const isInCart = cart.some((item) => item.id === product?.id);
   
     const handleAddToCart = () => {
       if (product) {
@@ -96,15 +97,17 @@ const ProductPage = () => {
         </View>
         <View className="absolute bottom-[50px] h-24 w-full bg-white z-40 flex px-5 flex-row items-center">
          
-          <TouchableOpacity
-            className={`h-16 w-full rounded-full bg-main-blue flex items-center justify-center ${
-              !product?.inStock && "bg-main-blue/80"
-            }`}
-            onPress={handleAddToCart}
-            disabled={!product?.inStock}
-          >
-            <Text className="text-white font-semibold text-2xl">Add to Cart</Text>
-          </TouchableOpacity>
+        <TouchableOpacity
+          className={`h-16 w-full rounded-full flex items-center justify-center ${
+            isInCart ? "bg-gray-400" : "bg-main-blue"
+          }`}
+          onPress={handleAddToCart}
+          disabled={isInCart || !product?.inStock}
+        >
+          <Text className="text-white font-semibold text-2xl">
+            {isInCart ? "Already in Cart" : "Add to Cart"}
+          </Text>
+        </TouchableOpacity>
         </View>
       </SafeAreaView>
     );
