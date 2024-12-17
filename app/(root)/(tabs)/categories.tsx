@@ -1,13 +1,14 @@
-import { View, Text } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { WrapperImage } from "@/components/category/wrapper-image"
+import { Text, View } from "react-native"
+
 
 const CategoriesPage = () => {
     return(
-        <SafeAreaView>
-            <View className="h-5 bg-main-blue">
-                <Text>Comming soon...</Text>
+        <WrapperImage>
+            <View className="absolute top-20 z-50 h-[90%] w-[90%] mt-5 bg-white">
+
             </View>
-        </SafeAreaView>
+        </WrapperImage>
     )
 }
 
