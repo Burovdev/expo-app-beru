@@ -18,3 +18,11 @@ type CartItem = {
     quantity: number;
     image: string;
   }
+
+type DeliveryPlace = {
+    country: string;
+    region: string;
+    city: string;
+    street: string;
+    zip: string;
+}
